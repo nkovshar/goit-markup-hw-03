@@ -278,7 +278,7 @@ section {
   display: flex;
   justify-content: center;
   padding-bottom: 72px;
-  gap: var(--card-set-gap);
+  gap: var(--card-set-gap-row);
 }
 
 .portfolio-btn {
