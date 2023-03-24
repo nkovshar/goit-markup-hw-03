@@ -6,7 +6,32 @@
   --main-hover-focus: #404bbf;
   --background-btn-team: #f4f4fd;
   --footer-text: #e7e9fc;
-  --
+  --card-set-gap-column: 48px;
+  --card-set-gap-row: 24px;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+button {
+  cursor: pointer;
+}
+address {
+  font-style: normal;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -19,6 +44,29 @@ body {
 
 .link {
   text-decoration: none;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .head-title {
@@ -37,18 +85,34 @@ body {
   color: var(--main-title-logo, #2e2f42);
 }
 .text {
+  margin-top: 8px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-text-color, #434455);
 }
 /* ------------Header--------------- */
+.header {
+  align-items: center;
+  border-bottom: 1px solid #e7e9fc;
+}
+.header-navigation {
+  display: flex;
+  margin-right: auto;
+}
+.header-list {
+  display: flex;
+  gap: 40px;
+}
+
 .header-logo {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-right: 76px;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 1.17;
-  display: flex;
   align-items: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -60,20 +124,30 @@ body {
 }
 
 .header-link {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--main-title-logo, #2e2f42) ;
+  color: var(--main-title-logo, #2e2f42);
 }
 
 .header-link:hover,
 .header-link:focus {
   color: var(--main-hover-focus, #404bbf);
 }
-
+.header-container {
+  display: flex;
+  align-items: center;
+}
 .header-address {
   font-style: normal;
+}
+.address-list {
+  display: flex;
+  gap: 40px;
 }
 
 .address-link {
@@ -85,30 +159,38 @@ body {
 
 .address-link:hover,
 .address-link:focus {
-  color: var(--main-hover-focus,#404bbf);
+  color: var(--main-hover-focus, #404bbf);
 }
 /* -------------------Hero-section----------------------- */
 .hero-section {
-  background: var(--main-title-logo, #2e2f42) ;
+  background: var(--main-title-logo, #2e2f42);
+  text-align: center;
+  padding-top: 188px;
+  padding-bottom: 188px;
 }
+
 .hero-title {
+  margin: 0 auto;
+  margin-bottom: 45px;
+  width: 496px;
   font-size: 56px;
   line-height: 1.07;
-  text-align: center;
   letter-spacing: 0.02em;
-  color: var(--main-background-color, #ffffff) ;
+  color: var(--main-background-color, #ffffff);
 }
 .hero-btn {
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  min-width: 169px;
+  height: 56px;
   background: var(--logo-color-first, #4d5ae5);
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.04em;
-  color: var(--main-background-color,  #ffffff);
-  cursor: pointer;
+  color: var(--main-background-color, #ffffff);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -117,28 +199,54 @@ body {
 
 /* -------------------About-section----------------------- */
 
-/* -------------------Duties-section----------------------- */
+.about-list {
+  display: flex;
+  gap: var(--card-set-gap-row);
+}
+.about-item {
+  flex-basis: calc((100% - 72px) / 4);
+}
 
+/* -------------------Duties-section----------------------- */
+.duties {
+  padding-top: 0;
+}
+.duties-title {
+  padding-bottom: 72px;
+}
+.duties-list {
+  display: flex;
+  gap: var(--card-set-gap-row);
+}
+
+.duties-item {
+  flex-basis: calc((100% - 48px) / 3);
+}
 /* -------------------Team-section----------------------- */
 .team {
-  background: var(--background-btn-team, #f4f4fd) ;
+  background: var(--background-btn-team, #f4f4fd);
+}
+.team-head-title {
+  padding-bottom: 72px;
+}
+.team-list {
+  display: flex;
+  gap: var(--card-set-gap-row);
 }
 
 .team-item {
+  flex-basis: calc((100% - 72px) / 4);
   background: var(--main-background-color, #ffffff);
-}
-.team-title {
-  text-align: center;
-}
-.team-text {
   text-align: center;
 }
 
 /* -------------------Footer-section----------------------- */
 .footer {
-  background: var(--main-title-logo, #2e2f42)  ;
+  background: var(--main-title-logo, #2e2f42);
 }
 .footer-logo {
+  padding-top: 100px;
+  padding-bottom: 16px;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -150,19 +258,33 @@ body {
   color: var(--logo-color-first, #4d5ae5);
 }
 .footer-logo-style {
-  color: var(--background-btn-team, #f4f4fd) ;
+  color: var(--background-btn-team, #f4f4fd);
 }
 
 .footer-text {
+  padding-bottom: 100px;
+  max-width: 264px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--footer-text,  #e7e9fc);
+  color: var(--footer-text, #e7e9fc);
 }
 
 /* ----------Portfolio-page----------------------- */
+.portfolio {
+  padding-top: 96px;
+}
+.portfolio-top-list {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 72px;
+  gap: var(--card-set-gap);
+}
 
 .portfolio-btn {
+  border-radius: 4px;
+  padding: 12px 24px;
+  border: 1px solid var(--footer-text, #e7e9fc);
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -171,9 +293,8 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
-  background: var(--background-btn-team,  #f4f4fd);
-  color: var(--logo-color-first,  #4d5ae5);
-  cursor: pointer;
+  background: var(--background-btn-team, #f4f4fd);
+  color: var(--logo-color-first, #4d5ae5);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
@@ -187,4 +308,21 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--card-set-gap-column));
+  margin-left: calc(-1 * var(--card-set-gap-row));
+}
+.portfolio-item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap-row));
+  margin-top: var(--card-set-gap-column);
+  margin-left: var(--card-set-gap-row);
+}
+
+.card-content {
+  padding: 32px 0 32px 16px;
+  border: 1px solid #e7e9fc;
 }
