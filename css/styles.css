@@ -6,8 +6,8 @@
   --main-hover-focus: #404bbf;
   --background-btn-team: #f4f4fd;
   --footer-text: #e7e9fc;
-  --card-set-gap-column: 48px;
-  --card-set-gap-row: 24px;
+  --card-set-gap-column: 24px;
+  --card-set-gap-row: 48px;
 }
 p,
 h1,
@@ -62,7 +62,8 @@ body {
   width: 1158px;
   padding-left: 15px;
   padding-right: 15px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 section {
   padding-top: 120px;
@@ -93,7 +94,6 @@ section {
 }
 /* ------------Header--------------- */
 .header {
-  align-items: center;
   border-bottom: 1px solid #e7e9fc;
 }
 .header-navigation {
@@ -191,6 +191,7 @@ section {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--main-background-color, #ffffff);
+  border: none;
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -201,7 +202,7 @@ section {
 
 .about-list {
   display: flex;
-  gap: var(--card-set-gap-row);
+  gap: var(--card-set-gap-column);
 }
 .about-item {
   flex-basis: calc((100% - 72px) / 4);
@@ -212,11 +213,11 @@ section {
   padding-top: 0;
 }
 .duties-title {
-  padding-bottom: 72px;
+  margin-bottom: 72px;
 }
 .duties-list {
   display: flex;
-  gap: var(--card-set-gap-row);
+  gap: var(--card-set-gap-column);
 }
 
 .duties-item {
@@ -227,32 +228,39 @@ section {
   background: var(--background-btn-team, #f4f4fd);
 }
 .team-head-title {
-  padding-bottom: 72px;
+  margin-bottom: 72px;
 }
 .team-list {
   display: flex;
-  gap: var(--card-set-gap-row);
+  gap: var(--card-set-gap-column);
 }
 
 .team-item {
   flex-basis: calc((100% - 72px) / 4);
   background: var(--main-background-color, #ffffff);
   text-align: center;
+  border-radius: 0px 0px 4px 4px;
+}
+.team-content {
+  padding: 32px 16px;
 }
 
 /* -------------------Footer-section----------------------- */
 .footer {
   background: var(--main-title-logo, #2e2f42);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.footer-content {
+  width: 264px;
 }
 .footer-logo {
-  padding-top: 100px;
-  padding-bottom: 16px;
+  display: block;
+  margin-bottom: 16px;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 1.17;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--logo-color-first, #4d5ae5);
@@ -262,8 +270,6 @@ section {
 }
 
 .footer-text {
-  padding-bottom: 100px;
-  max-width: 264px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -277,8 +283,8 @@ section {
 .portfolio-top-list {
   display: flex;
   justify-content: center;
-  padding-bottom: 72px;
-  gap: var(--card-set-gap-row);
+  margin-bottom: 72px;
+  gap: var(--card-set-gap-column);
 }
 
 .portfolio-btn {
@@ -313,16 +319,16 @@ section {
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(-1 * var(--card-set-gap-column));
-  margin-left: calc(-1 * var(--card-set-gap-row));
+  column-gap: 24px;
+  row-gap: 48px;
 }
 .portfolio-item {
-  flex-basis: calc(100% / 3 - var(--card-set-gap-row));
-  margin-top: var(--card-set-gap-column);
-  margin-left: var(--card-set-gap-row);
+  flex-basis: calc((100% - 48px) / 3);
 }
 
 .card-content {
   padding: 32px 0 32px 16px;
+
   border: 1px solid #e7e9fc;
+  border-top: none;
 }
